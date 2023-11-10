@@ -108,7 +108,7 @@ console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
-import '../css/02-timer.css'
+import '../css/02-timer.css';
 
 Notiflix.Notify.init({
   width: '360px',
@@ -148,22 +148,22 @@ function startTimer() {
   refs.stopBtn.disabled = false;
   refs.stopBtn.addEventListener('click', stopTimer);
 
-  intervalId = setInterval(() => {
+  const intervalId = setInterval(() => {
     diffTime -= 1000;
     fillDeadlineDate(diffTime);
-    if (diffTime < 1000) {
+    if (diffTime <= 1000) {
       clearInterval(intervalId);
-      Notiflix.Report.info(
-        'Your time is up',
-        '',
-        'Refresh Timer',
-        function cb() {
-          location.reload();
-        }
-      );
+      // Notiflix.Report.info(
+      //   'Your time is up',
+      //   '',
+      //   'Refresh Timer',
+      //   function cb() {
+      //     location.reload();
+      //   }
+      // );
       refs.deadline.disabled = true;
-        refs.stopBtn.disabled = true;
-        refs.stopBtn.removeEventListener('click', stopTimer);
+      refs.stopBtn.disabled = true;
+      refs.stopBtn.removeEventListener('click', stopTimer);
     }
   }, 1000);
 }
