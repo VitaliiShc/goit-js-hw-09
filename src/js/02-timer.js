@@ -153,14 +153,14 @@ function startTimer() {
     fillDeadlineDate(diffTime);
     if (diffTime <= 1000) {
       clearInterval(intervalId);
-      // Notiflix.Report.info(
-      //   'Your time is up',
-      //   '',
-      //   'Refresh Timer',
-      //   function cb() {
-      //     location.reload();
-      //   }
-      // );
+      Notiflix.Report.info(
+        'Your time is up',
+        '',
+        'Refresh Timer',
+        function cb() {
+          location.reload();
+        }
+      );
       refs.deadline.disabled = true;
       refs.stopBtn.disabled = true;
       refs.stopBtn.removeEventListener('click', stopTimer);
