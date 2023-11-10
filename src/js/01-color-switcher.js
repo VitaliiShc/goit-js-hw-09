@@ -30,8 +30,8 @@ function onStartSwitherClick() {
   // switcherIsActive = true;
   refs.startBtn.removeEventListener('click', onStartSwitherClick);
   refs.stopBtn.addEventListener('click', onStopSwitherClick);
-  refs.startBtn.setAttribute('disabled', 'disabled');
-  refs.stopBtn.removeAttribute('disabled');
+  refs.startBtn.disabled = true;
+  refs.stopBtn.disabled = false;
 }
 
 function onStopSwitherClick() {
@@ -39,8 +39,8 @@ function onStopSwitherClick() {
   // switcherIsActive = false;
   refs.startBtn.addEventListener('click', onStartSwitherClick);
   refs.stopBtn.removeEventListener('click', onStopSwitherClick);
-  refs.startBtn.removeAttribute('disabled');
-  refs.stopBtn.setAttribute('disabled', 'disabled');
+  refs.startBtn.disabled = false;
+  refs.stopBtn.disabled = true;
 }
 
 function switchBodyColor() {

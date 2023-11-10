@@ -1,0 +1,47 @@
+.timer-init {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 80px;
+}
+
+.timer-init > input {
+  height: 30px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+.timer-init > button {
+  border: 2px solid;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.timer-init > button:enabled {
+  background-color: rgb(146, 146, 230);
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.timer .field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.timer .label {
+  font-size: 18px;
+}
+
+.timer .value {
+  font-size: 36px;
+  font-weight: 700;
+}
